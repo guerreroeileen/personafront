@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     this.personaForm = this.fb.group({
+      id: [''],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       edad: ['', Validators.required],
@@ -64,10 +65,30 @@ export class AppComponent implements OnInit {
   guardar(): void {
     this.personaService.savePersona(this.personaForm.value).subscribe(resp => {
       this.personaForm.reset();
+      this.personas=this.personas.filter(persona=> resp.id!==persona.id);
       this.personas.push(resp);
     },
       error => { console.error(error) }
     )
+  }
+
+  eliminar(persona){
+    this.personaService.deletePersona(persona.id).subscribe(resp=>{
+      if(resp===true){
+        this.personas.pop(persona)
+      }
+    })
+  }
+
+  editar(persona){
+    this.personaForm.setValue({
+      id:persona.id,
+      nombre: persona.nombre ,
+      apellido: persona.apellido ,
+      edad: persona.edad,
+      pais: persona.pais,
+      estado: persona.estado,
+    })
   }
 
 

@@ -20,5 +20,8 @@ export class PersonaService {
     return this.httpClient.post(this.API_SERVER,persona);
   }
 
+  public deletePersona(id):Observable<any>{
+    return this.httpClient.delete(this.API_SERVER + "delete/"+id);
+  }
 
 }
