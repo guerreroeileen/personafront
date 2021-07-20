@@ -18,6 +18,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSortModule} from '@angular/material/sort'
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {MatSortModule} from '@angular/material/sort'
     MatSelectModule,
     MatPaginatorModule,
     MatExpansionModule,
-    MatSortModule
+    MatSortModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
