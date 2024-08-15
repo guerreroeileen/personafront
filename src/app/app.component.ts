@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { EstadosService } from './services/estados/estados.service';
 import { PaisesService } from './services/paises/paises.service';
 import { PersonaService } from './services/persona/persona.service';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { AfterViewInit } from '@angular/core';
 
 @Component({
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
 
-  personaForm: FormGroup;
+  personaForm: UntypedFormGroup;
   paises: any;
   estados: any;
   personas: any;
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 
   constructor(
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     public estadosService: EstadosService,
     public paisesService: PaisesService,
     public personaService: PersonaService
