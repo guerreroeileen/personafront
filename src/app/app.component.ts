@@ -5,7 +5,7 @@ import {MatSort} from '@angular/material/sort';
 import { EstadosService } from './services/estados/estados.service';
 import { PaisesService } from './services/paises/paises.service';
 import { PersonaService } from './services/persona/persona.service';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { AfterViewInit } from '@angular/core';
 
 @Component({
