@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "personafront:build"
+            "buildTarget": "personafront:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "personafront:build:production"
+              "buildTarget": "personafront:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "personafront:build"
+            "buildTarget": "personafront:build"
           }
         },
         "test": {
